@@ -2,6 +2,7 @@
 import mongoose from 'mongoose';
 
 const ScheduleSchema = new mongoose.Schema({
+  date: String,
   time: String,
   duration: String,
   leadName: String,

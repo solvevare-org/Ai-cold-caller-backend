@@ -43,7 +43,8 @@ export const getSchedule = async (req: Request, res: Response) => {
 
 export const createSchedule = async (req: Request, res: Response) => {
   try {
-    const newSchedule = new Schedule(req.body);
+    const { date, time, duration, leadName, company, type, status } = req.body;
+    const newSchedule = new Schedule({ date, time, duration, leadName, company, type, status });
     await newSchedule.save();
     res.status(201).json(newSchedule);
   } catch (error) {
